@@ -1,3 +1,21 @@
+<script setup>
+import { ref, onErrorCaptured } from "vue";
+import TestError from "./TestError.vue";
+
+const error = ref(null);
+
+onErrorCaptured((err) => {
+  error.value = err.message;
+  return false;
+});
+</script>
+
 <template>
-  <h1 class="text-2xl font-bold text-gray-500">Test Error</h1>
+  <div>
+    <h1>Error Boundary Test</h1>
+    <div v-if="error" class="text-red-500">Caught error: {{ error }}</div>
+    <div v-else>
+      <TestError />
+    </div>
+  </div>
 </template>
