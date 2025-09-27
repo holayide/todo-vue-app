@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import TaskForm from "../../ui/taskForm.vue";
+import TaskForm from "../../ui/TaskForm.vue";
 
 const props = defineProps({
   initialData: {
