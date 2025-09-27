@@ -5,7 +5,6 @@ import { fetchTaskById } from "../services/api";
 
 // Components
 import DetailHeader from "../components/features/detail-page/DetailHeader.vue";
-// import DetailPageSkeleton from "@/components/features/detail-page/DetailPageSkeleton.vue";
 import TaskDetail from "../components/features/detail-page/TaskDetail.vue";
 import TaskInfo from "../components/features/detail-page/TaskInfo.vue";
 
@@ -17,7 +16,7 @@ const id = route.params.id;
 const { data, isLoading, isError, error } = useQuery({
   queryKey: ["task", id],
   queryFn: () => fetchTaskById(id),
-  enabled: !!id, // only run if id exists
+  enabled: !!id,
 });
 </script>
 

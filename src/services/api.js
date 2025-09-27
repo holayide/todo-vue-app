@@ -78,7 +78,6 @@ export async function createTodo(task) {
     const res = await api.post("/tasks", task);
     return res.data;
   } catch (e) {
-    // console.error("Create API Error:", e.response?.data || e.message);
     throw new Error(e.response?.data?.message || "Failed to create task");
   }
 }
@@ -89,7 +88,6 @@ export async function updateTodo({ id, ...data }) {
     const res = await api.patch(`/tasks/${id}`, data);
     return res.data;
   } catch (e) {
-    // console.error("Create API Error:", e.response?.data || e.message);
     throw new Error(e.response?.data?.message || "Failed to update task");
   }
 }
@@ -100,7 +98,6 @@ export async function deleteTodo(id) {
     const res = await api.delete(`/tasks/${id}`);
     return res.data;
   } catch (e) {
-    // console.error("Create API Error:", e.response?.data || e.message);
     throw new Error(e.response?.data?.message || "Failed to update task");
   }
 }

@@ -2,10 +2,7 @@
 import { computed } from "vue";
 import { useQuery } from "@tanstack/vue-query";
 
-// import CardSkeleton from "./CardSkeleton.vue";
-// import { useTasksQueryOptions } from "../services/queryOptions";
 import { useTasksQueryOptions } from "../../../services/queryOptions";
-
 import { Calendar, CheckCircle2, Clock, AlertCircle } from "lucide-vue-next";
 
 const props = defineProps({

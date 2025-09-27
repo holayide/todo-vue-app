@@ -16,7 +16,7 @@ const props = defineProps({
   },
   as: {
     type: String,
-    default: "button", // could be "a", "div", etc.
+    default: "button",
   },
 });
 
