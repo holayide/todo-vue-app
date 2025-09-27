@@ -2,7 +2,8 @@
 import { ref, computed } from "vue";
 import { useQuery } from "@tanstack/vue-query";
 
-import Cards from "../components/features/summay-card/cards.vue";
+import Cards from "../components/features/summay-card/Cards.vue";
+
 import HomeHeader from "../components/features/home-header/HomeHeader.vue";
 import SearchFilter from "../components/features/search-filter/SearchFilter.vue";
 import TodoCard from "../components/features/todo-cards/TodoCard.vue";
