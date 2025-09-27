@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { Plus } from "lucide-vue-next";
-import TaskForm from "../../ui/taskForm.vue";
+import TaskForm from "../../ui/TaskForm.vue";
 
 const open = ref(false);
 
