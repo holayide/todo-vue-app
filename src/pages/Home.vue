@@ -2,13 +2,11 @@
 import { ref, computed } from "vue";
 import { useQuery } from "@tanstack/vue-query";
 
-// import Cards from "./components/features/summay-card/Cards.vue";
 import Cards from "../components/features/summay-card/cards.vue";
 import HomeHeader from "../components/features/home-header/HomeHeader.vue";
 import SearchFilter from "../components/features/search-filter/SearchFilter.vue";
 import TodoCard from "../components/features/todo-cards/TodoCard.vue";
 import Pagination from "../components/features/pagination/Pagination.vue";
-// import TodoCardSkeleton from "@/components/features/todo-cards/TodoCardSkeleton.vue";
 
 import { useDebounce } from "../hooks/debounce";
 import { useTasksQueryOptions } from "../services/queryOptions.js";

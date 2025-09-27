@@ -1,6 +1,48 @@
 import { useMutation, useQueryClient } from "@tanstack/vue-query";
-import { createTodo, deleteTodo, toggleTodo, updateTodo } from "./api";
+import {
+  createTodo,
+  deleteTodo,
+  loginUser,
+  registerUser,
+  toggleTodo,
+  updateTodo,
+} from "./api";
 import { toast } from "vue-sonner";
+
+// register
+export function useRegister() {
+  return useMutation({
+    mutationFn: registerUser,
+    onSuccess: (data) => {
+      if (data.accessToken) {
+        localStorage.setItem("accessToken", data.accessToken);
+      }
+      if (data.refreshToken) {
+        localStorage.setItem("refreshToken", data.refreshToken);
+      }
+      toast.success("Registration successful!");
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+}
+
+// login
+export function useLogin() {
+  return useMutation({
+    mutationFn: loginUser,
+    onSuccess: (data) => {
+      localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("refreshToken", data.refreshToken);
+
+      toast.success("Login successful!");
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+}
 
 export const useToggleTodo = () => {
   const queryClient = useQueryClient();
